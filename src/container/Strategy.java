@@ -2,8 +2,11 @@ package container;
 
 public class Strategy {
     //FIFO or LIFO
-    String str;
+    public String str;
 
+    public Strategy(String strategy){
+        this.str=strategy;
+    }
     @Override
     public String toString() {
         return str;

@@ -1,7 +1,7 @@
 package factory;
-
+import container.Strategy;
 import container.Container;
 
 public interface Factory {
-    Container createContainer(Strategy startegy);
+    Container createContainer(Strategy strategy);
 }

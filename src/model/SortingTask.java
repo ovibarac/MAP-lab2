@@ -1,5 +1,7 @@
 package model;
-
+import sorter.AbstractSorter;
+import sorter.BubbleSorter;
+import sorter.QuickSorter;
 import java.util.Arrays;
 import java.util.Objects;
 

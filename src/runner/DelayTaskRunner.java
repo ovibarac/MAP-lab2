@@ -1,33 +1,23 @@
 package runner;
 
-import container.Container;
-import model.Task;
-
 public class DelayTaskRunner extends AbstractTaskRunner{
-    Container taskContainer;
-
-    public DelayTaskRunner(TaskRunner taskRunner, Container container) {
+    //decorate StrategTaskRunner
+    public DelayTaskRunner(TaskRunner taskRunner) {
         super(taskRunner);
-        this.taskContainer = container;
     }
 
     @Override
     public void executeOneTask() {
-
+        delay(3000);
+        taskRunner.executeOneTask();
     }
 
-    @Override
-    public void executeAll() {
-
+    public void delay(int millis){
+        try{
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    @Override
-    public void addTask(Task t) {
-        taskContainer.add(t);
-    }
-
-    @Override
-    public boolean hasTask() {
-        return !taskContainer.isEmpty();
-    }
 }
